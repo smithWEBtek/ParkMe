@@ -1,0 +1,6 @@
+<h2><%= @listing.title %> ($<%= @listing.price %>)  </h2>
+<h2>Location:</h2> <h3><%= @listing.location.upcase %></h3>
+
+
+<p> <%= image_tag"#{@listing.image_url}", :size => "260x180"%> </p>
+<h2>Description:</h2> <h3><%= @listing.description %></h3>

@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <% if session[:user_id] %>
+    <h1>poop</h1>
+    <%= button_to "Log Out", log_out_path, method: :delete %>
+    <% else %>
+    <p> <%= link_to "Login", new_session_path %> </p>
+
+    <% end %>
+    <ol>
+    <li><%= link_to "Create User", new_user_path %></li>
+    <li> <%= link_to "All Listings", listings_path %> </li>
+    <li> <%= link_to "Create Listing", new_listing_path %> </li>
+  </ol>
     <%= yield %>
   </body>
 </html>
