@@ -1,0 +1,33 @@
+<style>
+body {
+  background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+  background-size: cover;
+}
+</style>
+
+<% if !flash[:message].nil? %>
+<%= flash[:message] %>
+<% end %>
+
+<% if !flash[:success].nil? %>
+<%= flash[:success] %>
+<% end %>
+
+<%=form_for @user do |f|%>
+<p>
+    <%=f.label :name%>
+    <%=f.text_field :name %>
+</p>
+
+<p>
+    <%=f.label :username%>
+    <%=f.text_field :username %>
+</p>
+
+<p>
+    <%=f.label :password%>
+    <%=f.password_field :password %>
+</p>
+
+<%=f.submit  %>
+<%end%>

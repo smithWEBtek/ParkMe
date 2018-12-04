@@ -1,0 +1,15 @@
+<style>
+body {
+  background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+  background-size: cover;
+}
+
+</style>
+
+<h1> All Listings  </h1>
+
+<ul>
+   <% @listings.each do |listing| %>
+   <li><h3><%=link_to listing.title, listing %> (<%= listing.location.upcase %>)</h3>  </li>
+   <% end %>
+ </ul>

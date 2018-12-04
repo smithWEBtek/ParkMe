@@ -1,0 +1,21 @@
+<style>
+body {
+  background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+  background-size: cover;
+}
+
+</style>
+
+
+<h1>  Make a new listing.</h1>
+<p>  <%= form_for @listing do |f| %>   </p>
+<p>    <%= f.label :title %>           </p>
+<p>    <%= f.text_field :title %>      </p>
+<p>    <%= f.label :image_url %>       </p>
+<p>    <%= f.text_area :image_url %>   </p>
+<p>    <%= f.label :location%>         </p>
+<p>    <%= f.text_field :location %>   </p>
+<p>    <%= f.label :price %>           </p>
+<p>    <%= f.number_field :price %>    </p>
+<p>    <%= f.submit %>                 </p>
+      <% end  %>
