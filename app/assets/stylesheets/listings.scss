@@ -1,3 +1,15 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.myVideo{
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ top: 0;
+ left: 0;
+ object-fit: cover;
+ width: 100%;
+ min-height: 100%;
+ z-index: -99;
+ opacity: .50;
+}

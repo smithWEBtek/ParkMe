@@ -4,3 +4,9 @@
 
 <p> <%= image_tag"#{@listing.image_url}", :size => "260x180"%> </p>
 <h2>Description:</h2> <h3><%= @listing.description %></h3>
+
+<%= form_for @reservation do |f| %>
+<%= f.label :listing_id %>
+<%= f.collection_select :listing_id, Listing.all, :id, :title %>
+<%= f.submit %>
+<% end %>

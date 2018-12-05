@@ -1,8 +1,13 @@
  <h2>All Listings</h2>
 
 
+  <%= video_tag('Brooklyn.mp4', class: "myVideo", loop: true, autoplay: true, muted: true) %>
+
+
+
  <ul>
    <% @listings.each do |listing| %>
    <li><h3><%=link_to listing.title, listing %> (<%= listing.location.upcase %>)</h3>  </li>
+   <p> <%=  image_tag(listing.image_url, :size => "260x180") %> </p>
    <% end %>
  </ul>
