@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
+  before_action :current_user, only:[:create, :edit]
   def index
     @users = User.all
   end
@@ -41,6 +42,10 @@ class UsersController < ApplicationController
   # end
 
   private
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 
   def find_user
     @user = User.find(params[:id])
