@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <p>  <%= button_to 'Home', listings_path, method: :get %>                  </p>
+
+
     <title>ParkMe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,8 +14,16 @@
 
   <body>
     <% if session[:user_id] %>
-    <%= button_to "Log Out", log_out_path, method: :delete  %>
-    <% end %>
+<h1><%= "Welcome Back" %> <%= current_user.name  %></h1>
+
+      <p> <%= button_to "All Listings", listings_path, method: :get %> </p>
+      <p> <%= button_to "Create Listing", new_listing_path, method: :get %> </p>
+      <p>  <%= button_to "Profile", current_user, method: :get %> </p>
+      <%= button_to "Log Out", log_out_path, method: :delete %>
+      <% else %>
+      <p> <%= button_to "Login", new_session_path, method: :get %> </p>
+      <p><%= button_to "Create User", new_user_path, method: :get %></p>
+      <% end %>
 
     <%= yield %>
   </body>

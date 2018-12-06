@@ -1,11 +1,10 @@
 <style>
 body {
-  background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+  background-image: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80');
   background-size: cover;
 }
 
 </style>
-
 
 <h1>  Make a new listing.</h1>
 <p>  <%= form_for @listing do |f| %>   </p>
@@ -15,6 +14,8 @@ body {
 <p>    <%= f.text_area :image_url %>   </p>
 <p>    <%= f.label :location%>         </p>
 <p>    <%= f.text_field :location %>   </p>
+<p>    <%= f.label :description%>      </p>
+<p>    <%= f.text_area :description %> </p>
 <p>    <%= f.label :price %>           </p>
 <p>    <%= f.number_field :price %>    </p>
 <p>    <%= f.submit %>                 </p>

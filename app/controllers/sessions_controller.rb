@@ -11,13 +11,14 @@ class SessionsController < ApplicationController
       log_in_user(@user)
       redirect_to listings_path
     else
-      flash[:errors] = [ "Username or password didn't match" ]
+      flash[:error] = [ "Username or password didn't match" ]
       redirect_to new_session_path
     end
   end
+  
 
   def destroy
     log_out
-    redirect_to spots_path
+    redirect_to listings_path
   end
 end
