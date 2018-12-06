@@ -1,10 +1,19 @@
 <style >
 
 body{
-background-image: url('https://media.giphy.com/media/t6conLiC13yyaqgijR/giphy.gif');
+background-image: url('https://images.unsplash.com/photo-1493606278519-11aa9f86e40a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80');
 background-size: cover;
 }
 </style>
 
 
-<h3>Hello <%= "#{@user.name}" %> </h3>
+<h2>Hello <%= "#{@user.name}" %> </h2>
+
+<h3>Here Are Your Reservations:</h3>
+
+
+<ol>
+  <% @user.listings.each do |listing| %>
+    <h4><li> <%= link_to listing.title, listing %> ($<%= listing.price %>) <br> Description: <%= listing.description %> (<%= listing.location.upcase %> )</li></h4>
+    <% end %>
+</ol>

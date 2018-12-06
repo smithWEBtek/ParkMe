@@ -10,14 +10,17 @@
   </head>
 
   <body>
+
+    <%= button_to "Home", listings_path, method: :get %>
     <% if session[:user_id] %>
-    <h1> <%= "Welcome Back!" %> </h1>
+    <h1> <%= "Hello #{@current_user.name}!" %> </h1>
+    <%= button_to "Profile", @current_user, method: :get %><br>
     <%= button_to "Log Out", log_out_path, method: :delete %>
-    <p> <%= link_to "All Listings", listings_path %> </p>
-    <p> <%= link_to "Create Listing", new_listing_path %> </p>
+    <p> <%= button_to "All Listings", listings_path, method: :get %> </p>
+    <p> <%= button_to "Create Listing", new_listing_path, method: :get %> </p>
     <% else %>
-    <p> <%= link_to "Login", new_session_path %> </p>
-    <p><%= link_to "Create User", new_user_path %></p>
+    <p> <%= button_to "Login", new_session_path, method: :get %> </p>
+    <p><%= button_to "Create User", new_user_path, method: :get %></p>
 
     <% end %>
     <%= yield %>

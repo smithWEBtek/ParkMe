@@ -1,19 +1,21 @@
-<h3>Create a New User</h3>
+<div style="text-align: center;">
+  <h3>Create a New User</h3>
 
-<ol>
-  <%if flash[:errors] %>
-  <% flash[:errors].each do |message| %>
-   <li> <%=  message %></li>
-   <% end %>
-   <% end %>
-</ol>
+  <ol>
+    <%if flash[:errors] %>
+    <% flash[:errors].each do |message| %>
+     <li> <%=  message %></li>
+     <% end %>
+     <% end %>
+  </ol>
 
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.submit %>
-<% end %>
+  <%= form_for @user do |f| %>
+<p>  <%= f.label :name %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label :username %>
+  <%= f.text_field :username %></p>
+  <p><%= f.label :password %>
+  <%= f.password_field :password %></p>
+  <p><%= f.submit %></p>
+  <% end %>
+</div>
